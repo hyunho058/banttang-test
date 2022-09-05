@@ -2,6 +2,7 @@ package com.hproject.banttang.deal.controller.request;
 
 import com.hproject.banttang.deal.entity.value.Category;
 import com.hproject.banttang.deal.entity.value.CategoryDetail;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -14,32 +15,45 @@ import java.util.List;
 @Getter
 public class DealSavingRequest {
     @NotNull
+    @Schema(description = "게시글 등록 유저 번호", example = "1", required = true)
     private final Long userId;
     @NotBlank
+    @Schema(description = "제목", example = "제목", required = true)
     private final String title;
     @NotBlank
+    @Schema(description = "내용", example = "내용", required = true)
     private final String content;
     @NotNull
+    @Schema(description = "카테고리", example = "BANTTANG", required = true)
     private final Category category;
+    @Schema(description = "카테고리 상세", example = "DIGITAL")
     private final CategoryDetail categoryDetail;
     @NotBlank
+    @Schema(description = "주소1", example = "서울특별시 강남구", required = true)
     private final String address1;
     @NotBlank
+    @Schema(description = "주소2", example = "역삼동", required = true)
     private final String address2;
     @NotNull
+    @Schema(description = "경도", example = "127.036377", required = true)
     private final Double tradeLongitude;
     @NotNull
+    @Schema(description = "위도", example = "37.500643", required = true)
     private final Double tradeLatitude;
     @Min(0)
     @NotNull
+    @Schema(description = "가격", example = "50000", required = true)
     private final Long price;
     @Min(0)
     @NotNull
+    @Schema(description = "가격/참여자 수", example = "10000", required = true)
     private final Long dutchPay;
     @Positive
     @NotNull
+    @Schema(description = "참여자 수", example = "5", required = true)
     private final Long maxParticipant;
     @NotNull
+    @Schema(description = "이미지", example = "[\"https://banttang-image.s3.ap-northeast-2.amazonaws.com/image/b8be5b2b-5bd7-4b07-b475-2803c51e8568photo-1659102914363.jpg\"]", required = true)
     private final List<String> imageUrls;
 
     @Builder
