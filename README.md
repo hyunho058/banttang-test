@@ -29,7 +29,7 @@ create database test_db;
 http://localhost:8080/swagger-ui/index.html#/ 링크를 통해 테스트를 진행 할수 있습니다.
 
 ## 패키지 구조
-```aidl
+```bash
 .
 ├── main
 │   ├── java
